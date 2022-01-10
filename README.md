@@ -20,7 +20,7 @@ Currenlty episodes are arbitrary defined as 128 time steps. This allows me to ri
 - This is not complete work. expect a few more updates
 - Weights and bais are obtaining a average score of about 15 at about 100k time steps. https://wandb.ai/cleanrl/cleanrl.benchmark/reports/Atari--VmlldzoxMTExNTI
 - more tuning needs to be done, increasing buffer size 1024, learning rate to 0.00025 and what score is recorded
-- 
+
 ### Reference 
 [PPO-Implementation-Deep-Dive](https://github.com/vwxyzjn/PPO-Implementation-Deep-Dive), Great starting point
 [Proximal Policy Optimization - PPO in PyTorch](https://blog.varunajayasiri.com/ml/ppo_pytorch.html)
