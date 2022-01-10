@@ -10,7 +10,7 @@ python atariPOO.py
 Currently it takes roughly 45 mintues to to run 25000 time steps with 8 parallel environemnts on a 15-4300u cpu using Proximal Policy Optimization. Achieving an average run score of 5 (on past 100 games) on BreakoutNoFrameskip-v4
 
 <p align="center">
-    <img src="results/results.png" width="300"/> 
+    <img src="results/results.png" width="350"/> 
     <img src="results/game.png" width="200"/> 
 </p>
 Currenlty episodes are arbitrary defined as 128 time steps. This allows me to rigidly define memory buffer size
