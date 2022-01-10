@@ -11,7 +11,7 @@ Currently it takes roughly 45 mintues to to run 25000 time steps with 8 parallel
 
 <p align="center">
     <img src="results/results.png" width="300"/> 
-    <img src="results/game.png" width="300"/> 
+    <img src="results/game.png" width="200"/> 
 </p>
 Currenlty episodes are arbitrary defined as 128 time steps. This allows me to rigidly define memory buffer size
 
