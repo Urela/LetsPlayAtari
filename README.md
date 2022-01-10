@@ -7,7 +7,7 @@ You can train the model by executing the following command:
 python atariPOO.py
 ```
 ### Results
-Currently it takes roughly 2h 20min to to run 100k time steps with 8 parallel environemnts on a 15-4300u cpu using Proximal Policy Optimization. Achieving an average run score of 7 (of the past 100 time steps) on BreakoutNoFrameskip-v4
+Currently it takes roughly 2h 20min to to run 100k time steps with 8 parallel environemnts on a 15-4300u cpu using Proximal Policy Optimization. Achieving an average run score of 7 (of the past 100 time steps) on OpenAi's Atari BreakoutNoFrameskip-v4
 
 <p align="center">
     <img src="results/results.png" width="335"/> 
