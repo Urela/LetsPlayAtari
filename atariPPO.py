@@ -97,8 +97,8 @@ class PPO:
 
   def selectAction(self, obs):
     obs    = torch.from_numpy(obs).float().to('cpu')
-    value  = self.AC.critic(obs/255.0)
-    dist   = self.AC.actor(obs/255.0)
+    value  = self.AC.critic(obs)
+    dist   = self.AC.actor(obs)
     action = dist.sample()
 
     probs  = torch.squeeze(dist.log_prob(action)).detach().numpy()
@@ -217,6 +217,7 @@ while time_step <= max_training_timesteps:
   state = envs.reset()
   for t in range(1, max_ep_len+1):
 
+    state = state/255
     action, probs, val = agent.selectAction(state)
     _state, reward, done, info = envs.step(action)
     agent.store(state, action, reward, probs, val, done)
