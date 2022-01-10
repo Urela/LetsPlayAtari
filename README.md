@@ -13,10 +13,14 @@ Currently it takes roughly 2h 20min to to run 100k time steps with 8 parallel en
     <img src="results/results.png" width="335"/> 
     <img src="results/game.png" width="200"/> 
 </p>
+
 Currenlty episodes are arbitrary defined as 128 time steps. This allows me to rigidly define memory buffer size
 
-### P.S
-This is not complete work. I plan to make the algorithms faster and clearner
+### Notes
+- This is not complete work. expect a few more updates
+- Weights and bais are obtaining a average score of about 15 at about 100k time steps. https://wandb.ai/cleanrl/cleanrl.benchmark/reports/Atari--VmlldzoxMTExNTI
+- more tuning needs to be done, increasing buffer size 1024, learning rate to 0.00025 and what score is recorded
+- 
 ### Reference 
 [PPO-Implementation-Deep-Dive](https://github.com/vwxyzjn/PPO-Implementation-Deep-Dive), Great starting point
 [Proximal Policy Optimization - PPO in PyTorch](https://blog.varunajayasiri.com/ml/ppo_pytorch.html)
