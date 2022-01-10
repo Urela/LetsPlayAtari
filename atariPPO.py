@@ -193,7 +193,7 @@ num_envs    = 8       # number of parallel environments
 
 # Environment Hyperparameters
 max_ep_len = 128                    # max timesteps in one episode
-max_training_timesteps = int(1e4)   # break training loop if timeteps > max_training_timesteps
+max_training_timesteps = 25000 #int(1e5)   # break training loop if timeteps > max_training_timesteps
 update_timestep = max_ep_len * 1    # update policy every n timesteps
 print_freq = update_timestep        # print avg reward in the interval (in num timesteps)
 
@@ -212,7 +212,8 @@ i_episode = 0
 
 agent = PPO(envs.single_observation_space, envs.single_action_space, batch_size=4, Mem_size=update_timestep, num_envs=num_envs)
 
-scores, avg_scores = [], []
+scores, avg_scores, time_step_arr = [], [], []
+
 while time_step <= max_training_timesteps:
   state = envs.reset()
   for t in range(1, max_ep_len+1):
@@ -233,6 +234,14 @@ while time_step <= max_training_timesteps:
         score = item['episode']['r']
         scores.append( score  )
         avg = np.round(np.mean(scores[-100:]), 2)
+        avg_scores.append(avg)
+        time_step_arr.append(time_step)
         i_episode+=1
         print(f"Episode: {i_episode}  Episodic return: {score} Avg returns:{avg} Time step: {time_step} ")
 
+from bokeh.plotting import figure, show
+p = figure(title="Atari [BreakoutNoFrameskip-v4]", x_axis_label="Time steps", y_axis_label="Scores")
+#x = np.arange(len(avg_scores))
+x = time_step_arr
+p.line(x, avg_scores,  legend_label="scores", line_color="blue", line_width=2)
+show(p) 
